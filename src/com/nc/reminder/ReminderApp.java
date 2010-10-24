@@ -9,6 +9,8 @@ import android.app.Application;
  * 
  */
 public class ReminderApp extends Application {
+	
+	public static final String TAG = "ReminderApp";
 
 	@Override
 	public void onCreate() {
