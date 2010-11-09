@@ -7,7 +7,7 @@
 		android:name="ReminderApp">
 		
 		<!-- widget -->
-		<receiver android:name=".widget.WidgetProvider">
+		<receiver android:name=".widget.ReminderWidgetProvider">
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 			</intent-filter>
@@ -15,12 +15,13 @@
                		android:resource="@xml/appwidget_info" />
 		</receiver>
 		
-		<!-- configurador de widget 
-		<activity android:name=".activity.AppWidgetConfigureActivity">
+		<!-- configurador de widget -->
+		<activity android:name=".activity.ReminderDrawActivity">
 			<intent-filter>
-		        <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+				<action android:name="android.intent.action.MAIN" />
+		        <action android:name="com.nc.reminder.action.NEW_DRAW" />
 		    </intent-filter>
-		</activity> -->
+		</activity>
 
 	</application>
 
