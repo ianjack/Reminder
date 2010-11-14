@@ -6,5 +6,5 @@
     >
     <Button android:id="@+id/prueba"  
             android:text="Prueba"    
-            style="@style/button"/>  
+            style="@style/button"/> 
 </LinearLayout>

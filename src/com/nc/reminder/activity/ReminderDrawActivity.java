@@ -1,30 +1,36 @@
 package com.nc.reminder.activity;
 
-
-import com.nc.reminder.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
+
+import com.nc.reminder.draw.DrawView;
+
 
 public class ReminderDrawActivity extends Activity {
 
 	public static final String TAG = ReminderDrawActivity.class.getSimpleName();
-	/*
-	 * (non-Javadoc)
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
+
+	private DrawView drawView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		Log.d(TAG, "onCreate");
-		setContentView(R.layout.reminder_draw);
 
-//		Intent resultValue = new Intent();
-//		resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-//		setResult(RESULT_OK, resultValue);
-//		finish();
+		// full screen
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+		// sin titulo
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		drawView = new DrawView(this);
+		
+		// agrego la vista
+		setContentView(drawView);
+
 	}
 
 }
