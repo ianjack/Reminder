@@ -9,9 +9,9 @@ import android.util.Log;
  * @author makensi
  * 
  */
-public class ReminderApp extends Application {
+public class Reminder extends Application {
 	
-	public static final String TAG = ReminderApp.class.getSimpleName();
+	public static final String TAG = Reminder.class.getSimpleName();
 
 	// action filter
 	public static final String NEW_DRAW = "com.nc.reminder.action.NEW_DRAW";

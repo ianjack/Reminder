@@ -9,21 +9,21 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.nc.reminder.R;
-import com.nc.reminder.ReminderApp;
-import com.nc.reminder.activity.ReminderDrawActivity;
+import com.nc.reminder.Reminder;
+import com.nc.reminder.activity.DrawActivity;
 
-public class ReminderWidgetProvider extends AppWidgetProvider {
+public class WidgetProvider extends AppWidgetProvider {
 
-	public static final String TAG = ReminderWidgetProvider.class.getSimpleName();
+	public static final String TAG = WidgetProvider.class.getSimpleName();
 
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		Log.d(TAG, "onUpdate");
 
 		// genero el intento de apertura de la actividad para dibujo
-		Intent intent = new Intent(context, ReminderDrawActivity.class);
+		Intent intent = new Intent(context, DrawActivity.class);
 		// accion de apertura de nuevo
-		intent.setAction(ReminderApp.NEW_DRAW);
+		intent.setAction(Reminder.NEW_DRAW);
 		// ojo si defines otro tipo como broadcast no abre la widget
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 		
@@ -42,11 +42,11 @@ public class ReminderWidgetProvider extends AppWidgetProvider {
 		Log.d(TAG, "onReceive");
 		
 		String action = intent.getAction();
-		if (AppWidgetManager.ACTION_APPWIDGET_ENABLED.equals(action)) {
+		if (AppWidgetManager.ACTION_APPWIDGET_ENABLED.equals(action)) { // instalacion
 			Log.d(TAG, "instalaci—n de la widget");
-		} else if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action)) {
+		} else if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action)) { // actualizacion
 			Log.d(TAG, "actualizaci—n de la widget");
-		} else {
+		} else { // otros casos
 			Log.d(TAG, "otra actualizaci—n " + action);
 		}
 

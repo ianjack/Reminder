@@ -4,10 +4,10 @@
 	package="com.nc.reminder" android:versionCode="1" android:versionName="1.0">
 	
 	<application android:icon="@drawable/icon" android:label="@string/app_name"
-		android:name="ReminderApp">
+		android:name="Reminder">
 		
 		<!-- widget -->
-		<receiver android:name=".widget.ReminderWidgetProvider">
+		<receiver android:name=".widget.WidgetProvider">
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 			</intent-filter>
@@ -16,7 +16,7 @@
 		</receiver>
 		
 		<!-- configurador de widget -->
-		<activity android:name=".activity.ReminderDrawActivity">
+		<activity android:name=".activity.DrawActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 		        <action android:name="com.nc.reminder.action.NEW_DRAW" />
